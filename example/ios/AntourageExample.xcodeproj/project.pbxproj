@@ -201,11 +201,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AntourageExample/Pods-AntourageExample-frameworks.sh",
-				"${PODS_ROOT}/Antourage/AntViewer/MyFrameworks/AntViewerExt.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ViewerExtension/ViewerExtension.framework/ViewerExtension",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AntViewerExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewerExtension.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

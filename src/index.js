@@ -7,11 +7,10 @@ import {
 } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-var AntourageIOSConsts = UIManager.AntourageView.Constants;
 var styles = StyleSheet.create({
   antourage: {
-    height: Platform.OS === 'ios' ? AntourageIOSConsts.ComponentHeight : 100,
-    width: Platform.OS === 'ios' ? AntourageIOSConsts.ComponentWidth : 100,
+    height: 100,
+    width: 100,
     position: 'absolute',
     // left: 50,
     // top: 50
