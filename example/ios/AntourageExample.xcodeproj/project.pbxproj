@@ -241,42 +241,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AntourageExample/Pods-AntourageExample-resources.sh",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Controllers/ChatViewController.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Controllers/EditProfileViewController.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Controllers/PlayerController.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Controllers/PollController.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Controllers/StreamListController.xib",
 				"${PODS_ROOT}/Antourage/AntViewer/Classes/GoogleService-Kek.plist",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/SwiftMessage/MessageView.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Views/EmptyDataSourceView.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Views/FooterView.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Views/PollTableViewCell.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Views/PortraitMessageCell.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Views/SkeletonCell.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Views/SponsoredBannerCell.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/Views/StreamCell.xib",
-				"${PODS_ROOT}/Antourage/AntViewer/Classes/CoreDataStaff/AntViewerModel.xcdatamodeld",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Antourage/AntWidget.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChatViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EditProfileViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PlayerController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PollController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StreamListController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleService-Kek.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MessageView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EmptyDataSourceView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FooterView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PollTableViewCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PortraitMessageCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SkeletonCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SponsoredBannerCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StreamCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntViewerModel.momd",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntWidget.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

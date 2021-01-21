@@ -8,7 +8,7 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  return [[AntWidget shared] view];
+  return [[Antourage shared] view];
 }
 
 + (BOOL)requiresMainQueueSetup
