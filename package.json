@@ -1,6 +1,6 @@
 {
   "name": "react-native-antourage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This package helps integrate Antourage to your react native project",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
