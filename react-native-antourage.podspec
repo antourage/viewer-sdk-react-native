@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   
 
   s.dependency "React"
-  s.dependency 'Antourage', '2.1.0'
+  s.dependency 'Antourage', '2.1.1'
 end
