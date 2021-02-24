@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
+import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import com.antourage.weaverlib.ui.fab.AntourageFab
 import com.facebook.react.bridge.*
@@ -37,14 +38,21 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
 
   override fun createViewInstance(@Nonnull reactContext: ThemedReactContext): AntourageFab {
     reactContext.addLifecycleEventListener(this)
-    fab = AntourageFab(reactContext)
+    Log.d(TAG, "createViewInstance")
+    if(fab !=null){
+      if (fab?.parent != null) {
+        (fab?.parent as ViewGroup).removeView(fab)
+      }
+    }else{
+      fab = AntourageFab(reactContext)
+    }
     return fab as AntourageFab
   }
 
   @ReactProp(name = "widgetPosition")
   fun setPosition(button: AntourageFab, position: String?) {
     Log.d(TAG, "setPosition: $position")
-    button.setPosition(position)
+    if(fab!=null && fab?.parent!=null) fab?.setPosition(position)
   }
 
   @ReactProp(name = "widgetMargins")
@@ -52,7 +60,7 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
     try {
       val horizontalMargin = position.getInt("horizontal")
       val verticalMargin = position.getInt("vertical")
-      button.setMargins(horizontalMargin, verticalMargin)
+      if(fab!=null && fab?.parent!=null) fab?.setMargins(horizontalMargin, verticalMargin)
     } catch (e: NoSuchKeyException) {
       Log.e(TAG, "wrong parameters in setMargins method")
     }
@@ -61,7 +69,7 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
   @ReactProp(name = "widgetLocale")
   fun setLocale(button: AntourageFab, locale: String?) {
     Log.d(TAG, "setLocale: $locale")
-    locale?.let { button.setLocale(it) }
+    locale?.let { fab?.setLocale(it) }
   }
 
   override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any>? {
