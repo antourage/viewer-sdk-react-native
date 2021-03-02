@@ -18,7 +18,6 @@ import kotlin.math.roundToInt
 
 
 class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickListener, LifecycleEventListener {
-
   companion object {
     private const val REACT_CLASS = "AntourageView"
     private const val TAG = "AntourageFabLogs"
@@ -38,12 +37,14 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
 
   override fun createViewInstance(@Nonnull reactContext: ThemedReactContext): AntourageFab {
     reactContext.addLifecycleEventListener(this)
-    Log.d(TAG, "createViewInstance")
-    if(fab !=null){
+    if (fab != null) {
+      Log.d(TAG, "createViewInstance old instance")
       if (fab?.parent != null) {
         (fab?.parent as ViewGroup).removeView(fab)
       }
-    }else{
+      fab?.resetViewIsDrawn()
+    } else {
+      Log.d(TAG, "createViewInstance new instance")
       fab = AntourageFab(reactContext)
     }
     return fab as AntourageFab
@@ -52,7 +53,7 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
   @ReactProp(name = "widgetPosition")
   fun setPosition(button: AntourageFab, position: String?) {
     Log.d(TAG, "setPosition: $position")
-    if(fab!=null && fab?.parent!=null) fab?.setPosition(position)
+    if (fab != null) fab?.setPosition(position)
   }
 
   @ReactProp(name = "widgetMargins")
@@ -60,7 +61,8 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
     try {
       val horizontalMargin = position.getInt("horizontal")
       val verticalMargin = position.getInt("vertical")
-      if(fab!=null && fab?.parent!=null) fab?.setMargins(horizontalMargin, verticalMargin)
+      Log.d(TAG, "setMargins: $position")
+      if (fab != null) fab?.setMargins(horizontalMargin, verticalMargin)
     } catch (e: NoSuchKeyException) {
       Log.e(TAG, "wrong parameters in setMargins method")
     }
