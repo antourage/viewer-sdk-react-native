@@ -20,4 +20,6 @@ RCT_EXPORT_METHOD(showFeed)
   
 }
 
+RCT_EXPORT_METHOD(onPause){}
+
 @end

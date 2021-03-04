@@ -25,6 +25,10 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
 
   private var fab: AntourageFab? = null
 
+  fun getInstance(): AntourageFab? {
+    return fab
+  }
+
   override fun onClick(v: View) {
     val map = Arguments.createMap()
     val context = v.context as ReactContext
