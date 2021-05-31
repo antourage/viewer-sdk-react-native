@@ -34,9 +34,9 @@ class AntourageManager(reactContext: ReactApplicationContext, antourageViewManag
 
 
   @ReactMethod
-  fun authWithApiKey(apiKey: String?, userId: String?, userNickName: String?) {
+  fun configure() {
     reactApplicationContext.currentActivity?.runOnUiThread {
-      apiKey?.let { AntourageFab.authWith(it, userId, userNickName, reactApplicationContext) }
+      AntourageFab.configure(reactApplicationContext)
     }
   }
 

@@ -6,7 +6,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import AntourageView, { Antourage } from 'react-native-antourage';
+import AntourageView, { Antourage } from 'antourage-react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,8 +17,7 @@ const instructions = Platform.select({
 
 export default class App extends Component {
   componentDidMount() {
-    // Antourage.showFeed();
-    Antourage.authWithApiKey('apiKey', 'refUserId', 'nickname');
+    Antourage.configure();
   }
 
   render() {

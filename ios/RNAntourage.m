@@ -5,11 +5,9 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(authWithApiKey:(nonnull NSString *)apiKey
-                  refUserId:(nullable NSString *)refUserId
-                  nickname:(nullable NSString *)nickname)
+RCT_EXPORT_METHOD(configure)
 {
-  [Antourage authWithApiKey:apiKey refUserId:refUserId nickname:nickname];
+  [Antourage configure];
 }
 
 RCT_EXPORT_METHOD(showFeed)

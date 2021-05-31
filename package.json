@@ -1,7 +1,7 @@
 {
-  "name": "react-native-antourage",
-  "version": "1.0.9",
-  "description": "This package helps integrate Antourage to your react native project",
+  "name": "antourage-react-native",
+  "version": "2.0.0",
+  "description": "Antourage React Native wrapper for Android and iOS",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-antourage.podspec",
+    "AntourageReactNative.podspec",
     "!lib/typescript/example",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -34,13 +34,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/antourage/RNAntViewer",
-  "author": "Antourage <mv@leobit.com> (https://github.com/antourage)",
+  "repository": "https://github.com/antourage/viewer-sdk-react-native",
+  "author": "Antourage AB",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/antourage/RNAntViewer/issues"
+    "url": "https://github.com/antourage/viewer-sdk-react-native/issues"
   },
-  "homepage": "https://github.com/antourage/RNAntViewer#readme",
+  "homepage": "https://github.com/antourage/viewer-sdk-react-native",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/bob": "^0.16.2",
