@@ -608,7 +608,7 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
-  - Antourage (from `https://github.com/antourage/viewer-sdk-ios`, tag `v3.0.0-beta.2`)
+  - Antourage (from `https://github.com/antourage/viewer-sdk-ios`, tag `v3.0.0-beta.3`)
   - AntourageReactNative (from `../..`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -679,7 +679,7 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Antourage:
     :git: https://github.com/antourage/viewer-sdk-ios
-    :tag: v3.0.0-beta.2
+    :tag: v3.0.0-beta.3
   AntourageReactNative:
     :path: "../.."
   DoubleConversion:
@@ -736,7 +736,7 @@ EXTERNAL SOURCES:
 CHECKOUT OPTIONS:
   Antourage:
     :git: https://github.com/antourage/viewer-sdk-ios
-    :tag: v3.0.0-beta.2
+    :tag: v3.0.0-beta.3
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -796,6 +796,6 @@ SPEC CHECKSUMS:
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 6c99d9a5286fe087e73c1ce07c7abf3dbe6a522c
+PODFILE CHECKSUM: 4d52252a64a605c97974d021ea8fcb1deb5052b7
 
 COCOAPODS: 1.10.1
