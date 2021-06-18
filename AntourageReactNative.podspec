@@ -6,17 +6,12 @@ Pod::Spec.new do |s|
   s.name         = "AntourageReactNative"
   s.version      = package["version"]
   s.summary      = package["description"]
-  s.homepage     = package["homepage"]
   s.license      = package["license"]
+  s.homepage     = package["homepage"]
   s.authors      = package["author"]
-
-  s.platforms    = { :ios => "11.3" }
   s.source       = { :git => "https://github.com/antourage/RNAntViewer.git", :tag => "#{s.version}" }
-
-  
   s.source_files = "ios/**/*.{h,m,mm,swift}"
-  
-
+  s.platforms    = { :ios => "11.3" }
   s.dependency "React"
-  s.dependency "Antourage"
+  s.dependency "Antourage", "~> 3.0.0"
 end
