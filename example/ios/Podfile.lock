@@ -212,11 +212,11 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - Antourage (3.0.0):
+  - Antourage (3.0.1):
     - Firebase/Auth
     - Firebase/Firestore
-  - AntourageReactNative (2.0.0):
-    - Antourage (~> 3.0.0)
+  - AntourageReactNative (2.0.1):
+    - Antourage (~> 3.0.1)
     - React
   - boost-for-react-native (1.63.0)
   - BoringSSL-GRPC (0.0.7):
@@ -732,8 +732,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
-  Antourage: d2c0a34f72c675c2a4d74b97d1a7b537decf6235
-  AntourageReactNative: bd6ac687e7c3e0acbdecad01b4a264161d1b66f6
+  Antourage: be08eb47b9c501effd7dd99cf75749ca5e5a6da2
+  AntourageReactNative: 342fc3ff40b2703bf4b4d2df690acd1e70cca626
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
