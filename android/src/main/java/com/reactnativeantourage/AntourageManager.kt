@@ -37,7 +37,7 @@ class AntourageManager(reactContext: ReactApplicationContext, antourageViewManag
   fun configure() {
     Log.d(TAG, "configure called")
     reactApplicationContext.currentActivity?.runOnUiThread {
-      AntourageFab.configure(reactApplicationContext)
+      AntourageFab.configure(reactApplicationContext, true)
     }
   }
 
