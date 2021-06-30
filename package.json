@@ -1,6 +1,6 @@
 {
   "name": "antourage-react-native",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Antourage React Native wrapper for Android and iOS",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

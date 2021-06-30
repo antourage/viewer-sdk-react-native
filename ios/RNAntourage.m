@@ -7,7 +7,7 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(configure)
 {
-  [Antourage configure];
+  [Antourage configureWithoutOnboarding];
 }
 
 RCT_EXPORT_METHOD(showFeed)

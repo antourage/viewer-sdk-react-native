@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift}"
   s.platforms    = { :ios => "11.3" }
   s.dependency "React"
-  s.dependency "Antourage", "~> 3.0.1"
+  s.dependency "Antourage", "~> 3.0.3"
 end
