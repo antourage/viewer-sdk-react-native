@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import AntourageView, { Antourage } from 'antourage-react-native';
 
 const instructions = Platform.select({
@@ -17,7 +11,7 @@ const instructions = Platform.select({
 
 export default class App extends Component {
   componentDidMount() {
-    Antourage.configure();
+    Antourage.configure(1);
   }
 
   render() {
@@ -26,13 +20,7 @@ export default class App extends Component {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <AntourageView
-          onViewerAppear={() => console.log('Appeared')}
-          onViewerDisappear={() => console.log('Disappeared')}
-          widgetPosition={'bottomRight'}
-          widgetLocale={'en'}
-          widgetMargins={{ vertical: 50, horizontal: 20 }}
-        />
+        <AntourageView portalColor={'#0000ff'} bottomMargin={40} />
       </View>
     );
   }

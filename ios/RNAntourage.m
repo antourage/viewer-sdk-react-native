@@ -1,23 +1,27 @@
 #import "RNAntourage.h"
-@import Antourage;
+@import AntourageViewer;
 
 @implementation RNAntourage
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(configure)
+RCT_EXPORT_METHOD(configure:(NSInteger)teamID)
 {
-  [Antourage configureWithoutOnboarding];
+    [Antourage.shared setTeamID:teamID];
 }
 
-RCT_EXPORT_METHOD(showFeed)
+RCT_EXPORT_METHOD(registerNotifications:(NSString *)fcmToken callback:(RCTResponseSenderBlock)callback)
 {
-  dispatch_async(dispatch_get_main_queue(), ^(void){
-    [[Antourage shared] showFeed];
-  });
-  
+    [Antourage.shared registerForRemoteNotificationsWithFcmToken:fcmToken completion:^(NSString *topic) {
+        callback(@[topic]);
+    }];
 }
 
-RCT_EXPORT_METHOD(onPause){}
+RCT_EXPORT_METHOD(unregisterNotifications:(RCTResponseSenderBlock)callback)
+{
+    [Antourage.shared unregisterForRemoteNotificationsWithCompletion:^(BOOL success) {
+        callback(@[@(success)]);
+    }];
+}
 
 @end

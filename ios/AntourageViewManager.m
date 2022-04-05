@@ -1,6 +1,5 @@
-
 #import "AntourageViewManager.h"
-@import Antourage;
+@import AntourageViewer;
 
 @implementation AntourageViewManager
 
@@ -8,22 +7,21 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  return [[Antourage shared] view];
+    return [[ANTWidget alloc] init];
 }
 
 + (BOOL)requiresMainQueueSetup
 {
-  return YES;
+    return YES;
 }
-  
-  RCT_EXPORT_VIEW_PROPERTY(onViewerAppear, RCTBubblingEventBlock);
-  RCT_EXPORT_VIEW_PROPERTY(onViewerDisappear, RCTBubblingEventBlock);
-  RCT_EXPORT_VIEW_PROPERTY(widgetMargins, NSDictionary);
-  RCT_EXPORT_VIEW_PROPERTY(widgetPosition, NSString);
-  RCT_EXPORT_VIEW_PROPERTY(widgetLocale, NSString);
 
+RCT_EXPORT_VIEW_PROPERTY(portalColor, UIColor);
+RCT_EXPORT_VIEW_PROPERTY(nameTextColor, UIColor);
+RCT_EXPORT_VIEW_PROPERTY(nameBackgroundColor, UIColor);
+RCT_EXPORT_VIEW_PROPERTY(titleTextColor, UIColor);
+RCT_EXPORT_VIEW_PROPERTY(titleBackgroundColor, UIColor);
+RCT_EXPORT_VIEW_PROPERTY(ctaTextColor, UIColor);
+RCT_EXPORT_VIEW_PROPERTY(ctaBackgroundColor, UIColor);
+RCT_EXPORT_VIEW_PROPERTY(liveDotColor, UIColor);
 
 @end
-
-
-  
