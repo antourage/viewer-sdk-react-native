@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AntourageView, { Antourage } from 'antourage-react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+const styles = StyleSheet.create({
+  screen: { flex: 1, justifyContent: 'center', alignItems: 'center' },
 });
+
+function Tab1Screen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Tab 1</Text>
+      <AntourageView />
+    </View>
+  );
+}
+
+function Tab2Screen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Tab 2</Text>
+    </View>
+  );
+}
+
+function Tab3Screen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Tab 3</Text>
+      <AntourageView portalColor={'#0000ff'} bottomMargin={40} />
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
 
 export default class App extends Component {
   componentDidMount() {
@@ -16,31 +43,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <AntourageView portalColor={'#0000ff'} bottomMargin={40} />
-      </View>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Tab 1" component={Tab1Screen} />
+          <Tab.Screen name="Tab 2" component={Tab2Screen} />
+          <Tab.Screen name="Tab 3" component={Tab3Screen} />
+        </Tab.Navigator>
+      </NavigationContainer>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
