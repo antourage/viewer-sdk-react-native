@@ -5,9 +5,13 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(configure:(NSInteger)teamID)
+RCT_EXPORT_METHOD(configure:(NSInteger)teamID localization:(NSString *)localization)
 {
-    [Antourage.shared setTeamID:teamID];
+    if (localization != nil) {
+        [Antourage.shared configureWithTeamID:teamID localization:localization];
+    } else {
+        [Antourage.shared configureWithTeamID:teamID];
+    }
 }
 
 RCT_EXPORT_METHOD(registerNotifications:(NSString *)fcmToken callback:(RCTResponseSenderBlock)callback)

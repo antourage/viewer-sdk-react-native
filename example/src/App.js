@@ -38,7 +38,7 @@ const Tab = createBottomTabNavigator();
 
 export default class App extends Component {
   componentDidMount() {
-    Antourage.configure(1);
+    Antourage.configure(1, null);
   }
 
   render() {
