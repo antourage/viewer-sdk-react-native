@@ -8,8 +8,8 @@ import PropTypes from 'prop-types';
 var styles = (bottomMargin) =>
   StyleSheet.create({
     antourage: {
-      height: 200,
-      width: 170,
+      height: 270,
+      width: 232,
       position: 'absolute',
       bottom: bottomMargin ?? 0,
       right: 0,

@@ -1,23 +1,22 @@
 package com.reactnativeantourage
 
-import android.content.Context
+import android.graphics.Color
 import android.util.Log
-import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
-import com.antourage.weaverlib.ui.fab.AntourageFab
-import com.facebook.react.bridge.*
+import com.antourage.weaverlib.ui.AntourageFab
+import com.facebook.react.bridge.Arguments
+import com.facebook.react.bridge.LifecycleEventListener
+import com.facebook.react.bridge.ReactContext
 import com.facebook.react.common.MapBuilder
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
 import com.facebook.react.uimanager.events.RCTEventEmitter
 import javax.annotation.Nonnull
-import kotlin.math.roundToInt
 
-
-class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickListener, LifecycleEventListener {
+class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickListener,
+  LifecycleEventListener {
   companion object {
     private const val REACT_CLASS = "AntourageView"
     private const val TAG = "AntourageFabLogs"
@@ -41,41 +40,52 @@ class AntourageViewManager : SimpleViewManager<AntourageFab?>(), View.OnClickLis
 
   override fun createViewInstance(@Nonnull reactContext: ThemedReactContext): AntourageFab {
     reactContext.addLifecycleEventListener(this)
-    if (fab != null) {
-      Log.d(TAG, "createViewInstance old instance")
-      if (fab?.parent != null) {
-        (fab?.parent as ViewGroup).removeView(fab)
-      }
-      fab?.resetViewIsDrawn()
+    if (fab != null && fab?.parent != null) {
+      (fab?.parent as ViewGroup).removeView(fab)
     } else {
-      Log.d(TAG, "createViewInstance new instance")
       fab = AntourageFab(reactContext)
     }
     return fab as AntourageFab
   }
 
-  @ReactProp(name = "widgetPosition")
-  fun setPosition(button: AntourageFab, position: String?) {
-    Log.d(TAG, "setPosition: $position")
-    if (fab != null) fab?.setPosition(position)
+  @ReactProp(name = "portalColor")
+  fun setPortalColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.portalColor = Color.parseColor(it) }
   }
 
-  @ReactProp(name = "widgetMargins")
-  fun setMargins(button: AntourageFab, position: ReadableMap) {
-    try {
-      val horizontalMargin = position.getInt("horizontal")
-      val verticalMargin = position.getInt("vertical")
-      Log.d(TAG, "setMargins: $position")
-      if (fab != null) fab?.setMargins(horizontalMargin, verticalMargin)
-    } catch (e: NoSuchKeyException) {
-      Log.e(TAG, "wrong parameters in setMargins method")
-    }
+  @ReactProp(name = "nameTextColor")
+  fun setNameTextColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.nameTextColor = Color.parseColor(it) }
   }
 
-  @ReactProp(name = "widgetLocale")
-  fun setLocale(button: AntourageFab, locale: String?) {
-    Log.d(TAG, "setLocale: $locale")
-    locale?.let { fab?.setLocale(it) }
+  @ReactProp(name = "nameBackgroundColor")
+  fun setNameBackgroundColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.nameBackgroundColor = Color.parseColor(it) }
+  }
+
+  @ReactProp(name = "titleTextColor")
+  fun setTitleTextColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.titleTextColor = Color.parseColor(it) }
+  }
+
+  @ReactProp(name = "titleBackgroundColor")
+  fun setTitleBackgroundColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.titleBackgroundColor = Color.parseColor(it) }
+  }
+
+  @ReactProp(name = "ctaTextColor")
+  fun setCtaTextColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.ctaTextColor = Color.parseColor(it) }
+  }
+
+  @ReactProp(name = "ctaBackgroundColor")
+  fun setCtaBackgroundColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.ctaBackgroundColor = Color.parseColor(it) }
+  }
+
+  @ReactProp(name = "liveDotColor")
+  fun setLiveDotColor(button: AntourageFab, color: String?) {
+    color?.let { fab?.liveDotColor = Color.parseColor(it) }
   }
 
   override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any>? {
